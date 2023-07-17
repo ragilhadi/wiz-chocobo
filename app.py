@@ -3,6 +3,11 @@ import pandas as pd
 import datetime
 import pickle
 
+st.set_page_config(
+    page_title="Wiz Chocobo Prediction",
+    page_icon=":rocket:"
+)
+
 if 'model' not in st.session_state:
     model = pickle.load(open('xgboost.sav', 'rb'))
     st.session_state['model'] = model
